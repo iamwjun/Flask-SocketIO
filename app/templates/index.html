@@ -35,9 +35,9 @@
     socket.emit('response', {data: 'I\'m connected!'});
     socket.on('response',function(data){         
         if (data.code == '200'){
-            console.log(data.msg);
+            console.log(data);
         }else{
-            console.log('ERROR:' + data.msg);
+            console.log('ERROR:' + data);
         }
     });
     // var socket = io.connect(url);
