@@ -8,7 +8,7 @@ class Config(object):
     JSON_SORT_KEYS = False
 
 class ProductionConfig(Config):
-    DATABASE_URI = 'mysql+pymysql://root:@127.0.0.1:3306/news?charset=utf8'
+    DEBUG = False
 
 class DevelopmentConfig(Config):
     DEBUG = True

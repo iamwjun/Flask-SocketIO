@@ -7,9 +7,8 @@ import os
 socketio = SocketIO()
 db = SQLAlchemy()
 
-def create_app(debug=False):
+def create_app():
     app = Flask(__name__)
-    app.debug = debug
     app.config.from_object('config.DevelopmentConfig')
 
     from .socket import socket as socket_blueprint
