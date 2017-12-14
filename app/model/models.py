@@ -38,7 +38,7 @@ class News(db.Model):
     update_time = db.Column(db.DateTime, nullable=False)
     update_by = relationship("user", backref="name")
     update_by = db.Column(db.String(50), nullable=False)
-    # release_time = db.Column(db.DateTime, nullable=False)
+    release_time = db.Column(db.DateTime, nullable=False)
     views = db.Column(db.Integer)
     body = db.Column(db.Text)
     summary = db.Column(db.String(150), nullable=False)

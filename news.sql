@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 2017-12-08 08:30:57
+-- Generation Time: 2017-12-14 08:03:45
 -- 服务器版本： 5.7.14
 -- PHP Version: 5.6.25
 
@@ -61,7 +61,9 @@ INSERT INTO `news` (`id`, `title`, `public_id`, `create_time`, `update_time`, `r
 (17, 'this is a test title', 'd46c244ffa01415581bdc81caf90e60f', '2017-12-07 17:37:19', '2017-12-07 17:37:19', '2017-12-07 17:37:19', '8205db503b6045ec8956c9b718662931', 'test', 'this is a test content', 0, 0, 0, '公司新闻', 'test', '../20171207.jpg'),
 (18, '厉害！山东连续上线3个云收费停车场', '3e374edb89194601a93932391257a5d4', '2017-12-08 10:31:31', '2017-12-08 10:31:31', '2017-12-08 10:31:31', '8205db503b6045ec8956c9b718662931', '山东,云收费,停车场', '厉害！山东连续上线3个云收费停车场', 0, 0, 0, '公司新闻', '山东,云收费,停车场', 'http://127.0.0.1:5000/static/image/201712/5544c40868b5480cac8d15993310cc7b.gif'),
 (19, '停天下已支持新能源车牌识别', '339d18bc767842d1996bf9a89acd81af', '2017-12-08 10:32:20', '2017-12-08 10:32:20', '2017-12-08 10:32:06', '8205db503b6045ec8956c9b718662931', '停天下已支持新能源车牌识别', '停天下已支持新能源车牌识别', 0, 0, 0, '公司新闻', '停天下,新能源车牌', 'http://127.0.0.1:5000/static/image/201712/e4b7af6caf254b84a54e4e851d29dfa6.gif'),
-(20, '又搞大事了，首家微信停车场上线！', 'dbb2180b38be4e4b9ca0060cec141522', '2017-12-08 16:21:00', '2017-12-08 16:21:00', '2017-12-08 16:20:25', '8205db503b6045ec8956c9b718662931', '近日，有细心的成都车主发现在武侯区富顿中心 B座地面停车场上出现了一个全新的无人收费停车场', '近日，有细心的成都车主发现在武侯区富顿中心 B座地面停车场上出现了一个全新的无人收费停车场。没错，小编很嗨森的告诉大家，这是中国无人收费停车场的引领者——停天下专为微型停车场量身设计开发的“微信停车场”。上线后受收到物业及车主的一致好评。', 0, 0, 0, '公司新闻', '微信停车场', 'http://127.0.0.1:5000/static/image/201712/3995c8b9dfff45238389a82c7968ee0a.gif');
+(20, '又搞大事了，首家微信停车场上线！', 'dbb2180b38be4e4b9ca0060cec141522', '2017-12-08 16:21:00', '2017-12-08 16:21:00', '2017-12-08 16:20:25', '8205db503b6045ec8956c9b718662931', '近日，有细心的成都车主发现在武侯区富顿中心 B座地面停车场上出现了一个全新的无人收费停车场', '近日，有细心的成都车主发现在武侯区富顿中心 B座地面停车场上出现了一个全新的无人收费停车场。没错，小编很嗨森的告诉大家，这是中国无人收费停车场的引领者——停天下专为微型停车场量身设计开发的“微信停车场”。上线后受收到物业及车主的一致好评。', 0, 0, 0, '公司新闻', '微信停车场', 'http://127.0.0.1:5000/static/image/201712/3995c8b9dfff45238389a82c7968ee0a.gif'),
+(21, 'test add news api', '4a8ecb3612744c259be846bfb6ee56b8', '2017-12-14 11:46:13', '2017-12-14 11:46:13', '2017-12-14 16:20:25', 'e36e4cbcb0a94c7e831baa4497e805e7', 'test add news api', 'test add news api', 0, 0, 0, '行业新闻', 'test,api', '201712/2017.jpg'),
+(22, 'test add news api', '08e1606126014b2b8e987080fe82dcb1', '2017-12-14 11:46:48', '2017-12-14 07:34:02', '2017-12-14 16:20:25', '42ca449dd1a84e02a69320fddecebb5d', 'test add news api', 'test add news api', 4, 0, 0, '公司新闻', 'test,api', '201712/2017.jpg');
 
 -- --------------------------------------------------------
 
@@ -85,9 +87,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `public_id`, `name`, `password`, `admin`, `weixin`, `create_time`, `update_time`) VALUES
-(3, '4dab3081-6e39-425d-9281-bd2ab0ead6e6', '黄瑞', 'sha256$nxm2UQDQ$e8c9cc88a82f8f9616d0a578fd747ec46ae30fdffed39afa551714d5bb17975f', 0, '', '2017-11-28 18:40:58', '2017-11-28 18:40:58'),
-(2, '2487f1ce-a903-4d97-bfa8-3d6b00e2d8d7', 'iamk', 'sha256$TmhEuMm9$f61504a58e9ebff2e986ed7f685c3eabbb10b78bae689c5efc3532b609bf7ec2', 1, 'oCJfqvgk_O60fQ9GIWSp-rrVTiDA', '2017-11-28 18:16:51', '2017-11-28 18:16:51'),
-(4, '8205db503b6045ec8956c9b718662931', 'wujun', 'sha256$1kG8G4ni$7bca4341139db6e681602326bc94c1277e384fffa537c70158ae96e82feff725', 0, 'oCJfqvgk_O60fQ9GIWSp-rrVTiDA', '2017-12-07 16:34:05', '2017-12-07 16:34:05');
+(7, '42ca449dd1a84e02a69320fddecebb5d', 'iamk', 'sha256$0ySD2ks5$ff96d9ca17dc93ed8bcc383a834cd2c05e6ba7419d00d02aa5df7832d5e97141', 1, 'oCJfqvgk_O60fQ9GIWSp-rrVTiDA', '2017-12-14 11:31:32', '2017-12-14 11:31:32'),
+(4, '8205db503b6045ec8956c9b718662931', 'wujun', 'sha256$1kG8G4ni$7bca4341139db6e681602326bc94c1277e384fffa537c70158ae96e82feff725', 0, '2313', '2017-12-07 16:34:05', '2017-12-07 16:34:05'),
+(5, 'e36e4cbcb0a94c7e831baa4497e805e7', 'test', 'sha256$Czy8J8Vl$c6005b18e8451674923cd5a02c20ace5871335626910e02ef905008723ecb860', 1, 'test', '2017-12-14 11:13:18', '2017-12-14 11:13:18');
 
 --
 -- Indexes for dumped tables
@@ -106,7 +108,9 @@ ALTER TABLE `news`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `public_id` (`public_id`);
+  ADD UNIQUE KEY `weixin` (`weixin`) USING BTREE,
+  ADD UNIQUE KEY `public_id` (`public_id`),
+  ADD UNIQUE KEY `name` (`name`) USING BTREE;
 
 --
 -- 在导出的表使用AUTO_INCREMENT
@@ -116,12 +120,12 @@ ALTER TABLE `user`
 -- 使用表AUTO_INCREMENT `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
 -- 使用表AUTO_INCREMENT `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -1,2 +1,9 @@
-Flask==0.12.2
 Flask_SocketIO==2.9.2
+SQLAlchemy==1.1.15
+Flask_Uploads==0.2.1
+PyMySQL==0.7.11
+Flask_SQLAlchemy==2.3.2
+Werkzeug==0.12.2
+Flask_Cors==3.0.3
+Flask==0.12.2
+PyJWT==1.5.3
