@@ -30,18 +30,28 @@
     // });
 
     // example success
-    var socket = io.connect('http://' + document.domain + ':' + location.port + '/test');
+    // var socket = io.connect('http://' + document.domain + ':' + location.port + '/allow');
 
-    socket.emit('response', {data: 'I\'m connected!'});
-    socket.on('response',function(data){         
-        if (data.code == '200'){
-            console.log(data);
-        }else{
-            console.log('ERROR:' + data);
-        }
-    });
+    // socket.emit('response', {room: 'I\'m connected!'});
+    // socket.on('response',function(data){         
+    //     if (data.code == '200'){
+    //         console.log(data);
+    //     }else{
+    //         console.log('ERROR:' + data);
+    //     }
+    // });
 
     // join_room
+    var socket = io.connect('http://' + document.domain + ':' + location.port + '/allow');
+    // socket.on('connect', function() {
+    //     // Connected, let's sign-up for to receive messages for this room
+    //     socket.emit('room', '123');
+    // });
+    socket.emit('join', {room: 'room1'});
+    socket.on('message', function(data) {
+        console.log('Incoming message:', data);
+    });
+    // socket.emit('create', 'room1');
 
 </script>
 </html>
