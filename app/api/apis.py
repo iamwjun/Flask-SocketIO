@@ -161,6 +161,17 @@ def getToken():
     except:
         return jsonify({'status': '401', 'message': 'an exception occurs!'})
 
+@api.route('/isUserExists/<weixin>', methods=['GET'])
+def isUserExists(weixin):
+    try:
+        user = User.query.filter_by(weixin=weixin).first()
+        if user:
+            return jsonify({'status': '200', 'message': 'ok!'})
+        return jsonify({'status': '404', 'message': 'The user does not exist!'})
+    
+    except:
+        return jsonify({'status': '401', 'message': 'An exception occurred during registration'})
+
 @api.route('/news', methods=['GET'])
 @token_required
 def get_all_news(current_user):

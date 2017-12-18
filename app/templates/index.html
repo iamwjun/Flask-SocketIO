@@ -29,7 +29,7 @@
     //     })
     // });
 
-    // example
+    // example success
     var socket = io.connect('http://' + document.domain + ':' + location.port + '/test');
 
     socket.emit('response', {data: 'I\'m connected!'});
@@ -40,29 +40,8 @@
             console.log('ERROR:' + data);
         }
     });
-    // var socket = io.connect(url);
-    // socket.emit('response', 'demo');
-    // socket.on('response', function(msg){
-    //     console.log(msg)
-    // });
 
-    // var socket = io("ws://127.0.0.1:5000");
-    
-    // socket.on('my event',function(data){
-    //     socket.emit('my event', {rp:"fine,thank you"}); //向服务器发送消息
-    //     console.log(data);
-    // });
-    // socket.on("my event",function(data){
-    //     console.log(data)
-    // })
-    
-    // socket.on('disconnect', function() {
-    //     console.log("与服务其断开");
-    // });
-    
-    
-    // socket.on('reconnect', function() {
-    //     console.log("重新连接到服务器");
-    // });
+    // join_room
+
 </script>
 </html>
