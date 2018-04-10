@@ -312,7 +312,7 @@ def delete_news(current_user, public_id):
 def upload(current_user):
     if request.method == 'POST' and 'photo' in request.files:
         try:
-            filename = photos.save(request.files['photo'], name=''+ str(datetime.utcnow().year) + str(datetime.utcnow().month) +'/'+ str(uuid.uuid4().hex) +'.')
+            filename = photos.save(request.files['photo'], name=''+ datetime.utcnow().strftime("%Y%m") +'/'+ str(uuid.uuid4().hex) +'.')
             return jsonify({'status': '200', 'path': filename})
         except Exception as inst:
             return jsonify({'status': '403', 'message': 'Abnormal when storing pictures'})
