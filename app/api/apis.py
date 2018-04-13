@@ -172,6 +172,36 @@ def isUserExists(weixin):
     except:
         return jsonify({'status': '401', 'message': 'An exception occurred during registration'})
 
+@api.route('/filter', methods=['POST'])
+@token_required
+def filter_news(current_user):
+    try:
+        data = request.get_json()
+
+        news = News.query.order_by(News.id.desc()).limit(data['page_size']).offset((data['page_num'] - 1) * data['page_size'])
+        output = []
+
+        for item in news:
+            items = {}
+            items['id'] = item.id
+            items['title'] = item.title
+            items['public_id'] = item.public_id
+            items['create_time'] = item.create_time.strftime('%Y-%m-%d %H:%M:%S')
+            items['update_time'] = item.update_time.strftime('%Y-%m-%d %H:%M:%S')
+            items['update_by'] = item.update_by
+            items['views'] = item.views
+            items['is_hot'] = item.is_hot
+            items['is_del'] = item.is_del
+            items['news_type'] = item.news_type
+            items['news_keys'] = item.news_keys
+            items['thumb'] = item.thumb
+            output.append(items)
+
+        return jsonify({'news': output})
+
+    except:
+        return jsonify({'status': '401', 'message': 'an exception occurs!'})
+
 @api.route('/news', methods=['GET'])
 @token_required
 def get_all_news(current_user):
@@ -253,9 +283,11 @@ def get_news_byid(current_user, public_id):
     items['public_id'] = item.public_id
     items['create_time'] = item.create_time.strftime('%Y-%m-%d %H:%M:%S')
     items['update_time'] = item.update_time.strftime('%Y-%m-%d %H:%M:%S')
+    items['release_time'] = item.release_time.strftime('%Y-%m-%d %H:%M:%S')
     items['update_by'] = item.update_by
     items['views'] = item.views
     items['body'] = item.body
+    items['summary'] = item.summary
     items['is_hot'] = item.is_hot
     items['is_del'] = item.is_del
     items['news_type'] = item.news_type
@@ -278,7 +310,9 @@ def promote_news(current_user, public_id):
         item.title=data['title']
         item.update_time=datetime.utcnow()
         item.update_by=current_user.public_id
+        item.release_time=data['release_time']
         item.body=data['body']
+        item.summary=data['summary']
         item.is_hot=data['is_hot']
         item.is_del= data['is_del']
         item.news_type= data['news_type']
