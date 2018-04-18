@@ -179,6 +179,7 @@ def filter_news(current_user):
         data = request.get_json()
 
         news = News.query.order_by(News.id.desc()).limit(data['page_size']).offset((data['page_num'] - 1) * data['page_size'])
+        count = News.query.count()
         output = []
 
         for item in news:
@@ -197,7 +198,7 @@ def filter_news(current_user):
             items['thumb'] = item.thumb
             output.append(items)
 
-        return jsonify({'news': output})
+        return jsonify({'news': output, 'count': count})
 
     except:
         return jsonify({'status': '401', 'message': 'an exception occurs!'})
